@@ -1,3 +1,4 @@
+from matplotlib.pyplot import axis
 import numpy as np
 # a=np.array([1,2,3,4])
 # print(a)
@@ -139,7 +140,82 @@ import numpy as np
 
 ###Broadcasting
 
-a = np.array([[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]])
-b= np.array([1,0,0,1])
+# a = np.array([[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]])
+# b= np.array([1,0,0,1])
 
-print(a+b) #it added the values with the matched index.....doesnt need to repeat the values
+# print(a+b) #it added the values with the matched index.....doesnt need to repeat the values
+
+
+
+# a= np.array([[34,21,34,55,66,87],[13,43,45,67,89,77]])
+# print(a.sum(axis=None))#here axis=none prints all the data sum,0 prints the column sum and 1 prints the row sum
+# print(np.sum(a,axis=None))
+
+# #we can also use var,std,mean,min,max etc statistics functions this way
+
+
+# a = np.array([1,2,4])
+# b=a.copy()
+# print(a,b) #to copy use copy method else the memory loc will be copied and change in both will happen
+
+
+
+# a =np.zeros((2,3)) #populate with zeros
+# print(a)
+
+# a=np.ones((2,3)) #populate with ones 
+# print(a)
+
+# a= np.full((2,3),5) #populate with given number
+# print(a)
+
+# a = np.eye(3) #return an identity matrix
+# print(a)
+
+# a= np.arange(20) #return a flat array
+# print(a)
+
+# a=np.linspace(0,10,5) #return a flat array wih stard and end with space in between
+# print(a)
+
+# a=np.random.random((3,2)) #0-1
+# print(a)
+
+# a= np.random.randn(3,2) #normal or gaussian random
+# print(a)
+
+# a= np.random.randint(2,10,size=(3,3)) #generate random intiger between 0-9
+# print(a)
+
+# a=np.random.choice(5,size=10) #takes data and size to generate a flat array
+# print(a)
+
+# a= np.random.choice([-1,2,-3,4],size=(3,3)) #takes list to choose from
+# print(a)
+
+
+
+
+
+###the admission fee at a small fare 1.5 for a children and 4.0 for adults.On a certain day 2200 people joined and 5050 fee was collected
+# how many children joined the program 
+
+
+# A =np.array([[1,1],[1.5,4.0]])
+# b= np.array([2200,5050])
+
+# x = np.linalg.inv(A).dot(b)
+# print(x)
+
+# x= np.linalg.solve(A,b) #better way
+# print(x)
+
+
+###import data from csv file
+
+
+data = np.loadtxt("spambase.csv",delimiter=",",dtype=np.float32)
+print(data.shape)
+
+data = np.genfromtxt("spambase.csv",delimiter=",",dtype=np.float32)
+print(data.shape)
