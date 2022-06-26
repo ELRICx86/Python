@@ -208,3 +208,4 @@ mlp.classify([1,1])
 _ = plt.plot(mlp.losses)
 
 mlp.plot()
+plt.show()
